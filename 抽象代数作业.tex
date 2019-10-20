@@ -1,0 +1,212 @@
+\documentclass[utf8]{ctexart}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\tcbuselibrary{most}
+\begin{document}
+\newtcolorbox{mybox}[2][]
+  {colback = yellow!5!white, colframe = blue!75!black, fonttitle = \bfseries,
+    colbacktitle = blue!85!black, enhanced,
+    attach boxed title to top left={yshift=-2mm},
+    title=#2,#1}
+\begin{mybox}[colback=white]{问题1}
+证明:$ \textit{S}_{3} \cong Aut(\textit{S}_{3}) $
+%$\textit{a}, \textit{S}_{3}$
+\end{mybox}
+\noindent 证明：
+\\
+注意到：$S_{3}$的生成元集可以为：
+$$\{(12),(13)\}$$
+如果将生成元映射好，则任意一个元素就可以映射好了，而自同构映射不改变阶数，于是只能将其映射为二阶元素，在$S_{3}$中的二阶元素是（12）,(13),(23)这三个，其任意两个就可以组成新的生成元集，于是就是以下三个：
+$$\{(12),(13)\}$$
+$$\{(12),(23)\}$$
+$$\{(13),(23)\}$$
+于是就有下面的6个映射：
+
+\begin{equation} \nonumber
+\begin{aligned}
+\phi_{1}:(12)(13)\rightarrow (12)(13) \\
+\phi_{2}:(12)(13)\rightarrow (13)(12) \\
+\phi_{3}:(12)(13)\rightarrow (12)(23) \\
+\phi_{4}:(12)(13)\rightarrow (32)(12) \\
+\phi_{5}:(12)(13)\rightarrow (32)(13) \\
+\phi_{6}:(12)(13)\rightarrow (13)(23) \\
+\end{aligned}
+\end{equation}
+其中的三个对换显然是三个二阶元素，然后两个三轮换与$S_{3}$中的三轮换对应，于是建立起了同构关系。于是就可以直接写出那个同构映射的样子：
+\begin{equation} \nonumber
+\begin{aligned}\Phi:
+\phi_{1}\rightarrow &e \\
+\phi_{2}\rightarrow &(12) \\
+\phi_{3}\rightarrow &(23) \\
+\phi_{4}\rightarrow &(132) \\
+\phi_{5}\rightarrow &(13) \\
+\phi_{6}\rightarrow &(123) \\
+\end{aligned}
+\end{equation}
+法二：除了以上的接近于枚举法的方式之外可以在第二步用一个等效：$S_{3}$指的是将（1，2，3）映射成任意一种排列，而$Aut(S_{n})$从生成元的映射来考虑则是将（（12），（13），（23））映射成任一种排列，于是建立起：
+
+
+\begin{equation} \nonumber
+\begin{aligned}
+K:(12)\rightarrow 1 \\
+(13)\rightarrow 2\\
+(23)\rightarrow 3
+\end{aligned}
+\end{equation}
+这个映射就说明了$Aut(S_{3})$可以与$S_{3}$完成了同构。
+\begin{mybox}[colback=white]{问题2}
+证明:$ \textit{S}_{4} \cong Aut(\textit{S}_{4}) $
+%$\textit{a}, \textit{S}_{3}$
+\end{mybox}
+\noindent
+证明：\\
+这个题的证明与上一个题不同，当然可以与第一题的第一种方法一样枚举，但是我懒的举了。\\直接法二: \par\noindent
+%还有一种比较直白的方式：\\%（1，2，3，4）的任意一种置换是$S_{4}$的全体，即$S_{4}$中的元素与任一种置换的结果相对应，但是我可以这样理解：\\
+%1.将置换后的结果的第一个数选择出来。\\
+%2.将由第一个元素对应的后三个元素选出来。\\
+%即将（1，2，3，4）记为\{1（2，3，4）\}这24个元素都可以这样记，将采用这种记法的全体记为集合（群）A，换句话说建立了一个同构：
+%\begin{align*}
+%	P: S_{4}\rightarrow &A \\
+%%	x\rightarrow &{T_{a}(t_{a1},t_{a2},t_{a3})}
+%\end{align*}
+%将集合A定义为群，在这个群内的运算法则的定义位为结果量的乘积，即x,y属于$S_{4}$
+%$P(x)= x*(1,2,3,4)$$P(y)= y*(1,2,3,4)$,则$P(x)\times P(y)\triangleq x*y*(1,2,3,4)$。\\
+%而对于$Aut(S_{4})$中的元素，与第一题类似，先群定一个生成元集：
+%$$\{(12),(13),(14)\}$$然后考虑他可能映射成的生成元集：
+
+%$$B_{1}\{(12),(13),(14)\}$$
+
+%$$B_{2}\{(21),(23),(24)\}$$
+
+%$$b_{3}\{(31),(32),(34)\}$$
+
+%$$B_{4}\{(41),(42),(43)\}$$
+%这里的B只是个集合，后面的大括号的元素没有顺序，当选中一个生成元集后其中的映射又是可以随便挑的,即生成元的映射分为两步：
+%\\1.生成元集的对应
+%\\2.集内的生成元的对应\\，修正一下B的写法：
+%$$B_{a}(b_{a1},b_{a2},b_{a3})$$此处的B后括号已经有顺序了。
+%将上面的B的形式全体记为集合N
+%于是对于$\phi\in Aut(S_{4})$有这样的同构关系：
+%\begin{align*}
+%	\Delta: Aut(S_{4}) \rightarrow&N \\
+%	\phi \rightarrow &B_{a}(b_{a1},b_{a2},b_{a3})
+%\end{align*}
+%现在观察N与A，显然同构（元素结构完全相同）
+%\\
+%重新写一下他的证明：\\
+对于一个特定的自同构而言，我先确定一个他的充分条件，对$S_{4}$我去寻找到他的生成元集：$\{(12),(13),(14)\}$任何一个在其中的元素都可以由这个集合中的元素 的乘积表示，然后我们可以将$Aut(S_{4})$中的元素对这个生成元集映射，则映射后的结果就被唯一确定了，因此问题就是为了寻找这个生成元集的映射\\我们显然有{1,2,3,4}这四个元素处在等价的位置上，因此
+$$\{(12),(13),(14)\}$$
+$$\{(21),(23),(24)\}$$
+$$\{(31),(32),(34)\}$$
+$$\{(41),(42),(43)\}$$
+这几个集合都可以作为其生成元集，然后这几个集合中的元素都可以随便被原来的生成元集合中的元素以任意排列的方式映射得到。\\
+以集合$\{(12),(13),(14)\}$与集合$\{(21),(23),(24)\}$的映射就是
+\begin{align*}
+	Q_{1}: (12)\rightarrow (21) \\
+	(13)\rightarrow (23)\\
+	(14)\rightarrow (24)
+\end{align*}
+\begin{align*}
+	Q_{2}: (12)\rightarrow (21) \\
+	(13)\rightarrow (24)\\
+	(14)\rightarrow (23)
+\end{align*}
+\begin{align*}
+	Q_{3}: (12)\rightarrow (23) \\
+	(13)\rightarrow (21)\\
+	(14)\rightarrow (24)
+\end{align*}
+\begin{align*}
+	Q_{4}: (12)\rightarrow (23) \\
+	(13)\rightarrow (24)\\
+	(14)\rightarrow (21)
+\end{align*}
+\begin{align*}
+	Q_{5}: (12)\rightarrow (24) \\
+	(13)\rightarrow (23)\\
+	(14)\rightarrow (21)
+\end{align*}
+\begin{align*}
+	Q_{6}: (12)\rightarrow (24) \\
+	(13)\rightarrow (21)\\
+	(14)\rightarrow (23)
+\end{align*}
+这六个映射，所以这里我们找到了$4\times 6=24$个，现在我要说明只有这24个，由于自同构不改变阶数所以由（12）（13）的结果是
+三阶我们知道如果是对换为生成元的话，则必然两个生成元有相同的一个元素,所以其表达式必然是这样：
+$$\{(ab),(bc),(cd)\}$$或$$\{(ab),(ac),(ad)\}$$但是前者显然不行，第一个与最后一个元素没有相同的元素。如果映射的后 的二阶元素不是对换而是双对换的话是不能有对换的，否则总会重复，这样其乘积的结果也不是三阶元素，全是双对换也不行，因此只有上面说到的几个映射的方式,于是：
+\begin{align*}
+	\phi: S_{4}\rightarrow& S_{4} \\
+	(Aa_{1})\qquad(Aa_{2})\qquad(Aa_{3})\rightarrow& (Bb_{1})\qquad(Bb_{2})\qquad(B_{3})\\
+	\end{align*}
+以上的描述就是任意一个在$Aut(S_{4})$中的元素的定义，将形式${(Xx_{1})(Xx_{2})(X_{3})}$这里的X以及$x_{1}$$x_{2}$$x_{3}$都是1，2，3，4这四个数中的一个，将这形式的全体的集合记为W,并将其中的元素记为$\{(Aa_{1})(Aa_{2})(Aa_{3})\}$,这时这个形式已经不是个集合了，已经考虑了$a_{1}，a_{2}，a_{3}$的顺序了，%，定义这个集合的运算是：
+%$$\{(Aa_{1})(Aa_{2})(Aa_{3})\}\times\{(Bb_{1})(Bb_{2})(Bb_{3})\}=$$
+%$$A\rightarrow B $$以及
+%$$(a_{1}a_{2}a_{3})\rightarrow(b_{1}b_{2}b_{3})$$
+我可以以轮换的方式来写：
+$$ \{(Aa_{1})(Aa_{2})(Aa_{3})\}=\left(
+\begin{aligned}
+1 \qquad 2 \qquad& 3\qquad 4\\
+A \qquad a_{1} \qquad& a_{2}\qquad a_{3} 
+\end{aligned}
+\right).
+$$
+$$ \{(Bb_{1})(Bb_{2})(Bb_{3})\}=\left(
+\begin{aligned}
+1 \qquad 2 \qquad& 3\qquad 4\\
+B \qquad b_{1} \qquad& b_{2}\qquad b_{3} 
+\end{aligned}
+\right).
+$$也就是$\{(Aa_{1})(Aa_{2})(Aa_{3})\}$可简记为$(k^{a}_{1},k^{a}_{2},k^{a}_{3},k^{a}_{4})$,他用轮换的方式表示变换
+则其乘积也就是复合，也即是：
+$$\{(Aa_{1})(Aa_{2})(Aa_{3})\}\times\{(Bb_{1})(Bb_{2})(Bb_{3})\}=(k^{a}_{1},k^{a}_{2},k^{a}_{3},k^{a}_{4})(k^{b}_{1},k^{b}_{2},k^{b}_{3},k^{b}_{4})$$
+由$\phi\in Aut(S_{4})$的定义，有一个满同态：
+\begin{align*}
+	M: Aut(S_{4})\rightarrow &W \\
+	\phi\rightarrow &(Xx_{1})(Xx_{2})(Xx_{3})\\
+	\phi\rightarrow &(k_{1}k_{2}k_{3}k_{4})
+	\end{align*}
+	由$S_{4}$定义可知其就是所有的轮换,也就是W，所以：
+	\begin{align*}
+	M: Aut(S_{4})\rightarrow &S_{4} \\
+	%\phi\rightarrow &(Xx_{1})(Xx_{2})(Xx_{3})\\
+	\phi\rightarrow &(k_{1}k_{2}k_{3}k_{4})
+	\end{align*}
+而且两者的阶也是相同的，所以是个同构。
+\begin{mybox}[colback=white]{问题3}
+证明:$ \textit{S}_{3} \cong Aut(\textit{B}_{4}) $
+%$\textit{a}, \textit{S}_{3}$
+\end{mybox}
+\noindent
+证明：\\
+这个题还是比较简单的，我们将$B_{4}$间记为：
+$$\{e,a,b,c\}$$这三个元素都是2阶元素，由对称性，任意一个都可以映射为任意的另外的两个，则2阶的映射有3个，对换ab对换ac对换bc,还有就是abc的轮换有顺时针与逆时针两个，这显然就是对应于$S_{3}$中的三个对换与2个轮换。
+\begin{mybox}[colback=white]{问题4}
+证明:$ \textit{S}_{4} \cong Aut(\textit{A}_{4}) $
+%$\textit{a}, \textit{S}_{3}$
+\end{mybox}
+这个结论看起来也是显然的，先考虑$A_{4}$的中心，可以看出是平凡的，在$A_{4}$之外且在$S_{4}$中的元素有有两种，对换还有4轮换，对于任意对换而言无法与$A_{4}$中的每个元素都交换，比如（a,b）这个对换显然无法与(abc)这个对换交换，对于4轮换（abcd）取（ab）(cd)，验证可知不可交换了，考虑集合：
+$$O=\{x|对\forall a_{4}\in A_{4},xa_{4}x^{-1}=S,x\in S_{4}\}$$由上面的描述可知这是个平凡集。\\
+现在考虑同态：
+\begin{align*}
+	\Phi: S_{4}\rightarrow& Aut(A_{4}) \\
+	g\rightarrow& \phi =\{S\rightarrow gSg^{-1}\}\\
+	\end{align*}
+	我说这是个同构，为什么？\\
+	因为如果存在$g_{1} \not= g_{2}$且对应的$\phi_{1}=\phi_{2}$,集对$\forall x\in A_{4}$都有$g_{1}x g_{1}^{-1}=g_{2}xg_{2}^{-1}$则：$$g_{2}^{-1}g_{1}\in O$$
+	因此$$g_{2}^{-1}g_{1}=e$$,这就矛盾了。\\因此这是个同构。
+\begin{mybox}[colback=white]{问题5}
+证明:$ A_{4}^{[1]}=B_{4} $
+%$\textit{a}, \textit{S}_{3}$
+\end{mybox}
+\noindent
+证明：\\
+由换位子群的性质3我们知道他是正规子群，且是任意一个$A_{4}$的正规子群的子群，$A_{4}$是个12阶群，则其子群元素的阶数只有2，4阶，而$B_{4}$就是个每个元素的阶数都是2阶的群，经检验可知这个群是$A_{4}$的正规子群，因此$A_{4}^{[1]}$是它的子群，但是它的元素只有二阶，它的子群的阶数只有2或者4，如果除去单位元后只有一个元素，这显然不是$A_{4}$的正规子群，于是只有$B_{4}$这一种选择了。\\
+综上：$$ A_{4}^{[1]}=B_{4} $$
+\begin{mybox}[colback=white]{问题6}
+证明:$ S_{4}^{[1]}=A_{4} $
+%$\textit{a}, \textit{S}_{3}$
+\end{mybox}
+\noindent\\
+由上一道题的结果，$A_{4}$的换位子群是$B_{4}$，所以又换位子群的定义$S_{4}$的换位子群一定包含$B_{4}$，我们知道$A_{4}$是$S_{4}$的正规子群，所以由换位子群的性质3$S_{4}$的换位子群的是$A_{4}$的子群，介于$B_{4}$与$A_{4}$之间的群只有这两个群本身，在$B_{4}$中只有4个元素，对于（12）（13）的换位就不行了,所以只有$A_{4}$满足条件，它就是换位子群。
+\end{document}
